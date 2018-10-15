@@ -1,0 +1,182 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.page-header {
+    background: #cc3433;
+}
+
+#center .panel-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.navbar {
+    background: #ff9400;
+    min-height: 80px;
+}
+
+.navbar-nav {
+    margin-top: 30px !important;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+    height: 80px;
+}
+
+.navbar-brand {
+    font-size: 40px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar-collapse p {
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.navbar-collapse .img-rounded {
+    border-radius: 6px;
+    margin-left: 15px;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #701515;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #fff;
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: #ff9400;
+    border-color: #ff9400;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: #ff9400;
+}
+
+.footer a {
+    color: white;
+}
+
+.article-img {
+    /*margin-top: -20px;*/
+    margin-bottom: 0;
+    position: relative;
+}
+
+.article-img img {
+    z-index: 1;
+}
+
+.article .btn-link,
+.article-img .btn-link {
+    margin-bottom: -80px;
+    margin-right: 5px;
+    font-size: 2em;
+    color: yellow;
+    z-index: 2;
+}
+
+.article .article-h3 {
+    padding-right: 80px;
+}
+
+.article .article-text img {
+    float: right;
+
+}
+
+.btn-success {
+    background-color: #ff9400;
+    border-color: #ff9400;
+}
+
+.btn-success:focus,
+.btn-success.focus {
+
+    background-color: #ff9400;
+    border-color: #ff9400;
+}
+
+.btn-success:hover {
+
+    background-color: #c47100;
+    border-color: #c47100;
+}
+
+.btn-success:active,
+.btn-success.active,
+.open > .dropdown-toggle.btn-success {
+
+    background-color: #ff9300;
+    border-color: #ff9300;
+}
+
+.btn-success:active:hover,
+.btn-success.active:hover,
+.open > .dropdown-toggle.btn-success:hover,
+.btn-success:active:focus,
+.btn-success.active:focus,
+.open > .dropdown-toggle.btn-success:focus,
+.btn-success:active.focus,
+.btn-success.active.focus,
+.open > .dropdown-toggle.btn-success.focus {
+
+    background-color: #701515;
+    border-color: #701515;
+}
+
+.btn-success.disabled,
+.btn-success[disabled],
+fieldset[disabled] .btn-success,
+.btn-success.disabled:hover,
+.btn-success[disabled]:hover,
+fieldset[disabled] .btn-success:hover,
+.btn-success.disabled:focus,
+.btn-success[disabled]:focus,
+fieldset[disabled] .btn-success:focus,
+.btn-success.disabled.focus,
+.btn-success[disabled].focus,
+fieldset[disabled] .btn-success.focus,
+.btn-success.disabled:active,
+.btn-success[disabled]:active,
+fieldset[disabled] .btn-success:active,
+.btn-success.disabled.active,
+.btn-success[disabled].active,
+fieldset[disabled] .btn-success.active {
+    background-color: #cc3433;
+    border-color: #cc3433;
+}
+
+.btn-success .badge {
+    color: #cc3433;
+
+}

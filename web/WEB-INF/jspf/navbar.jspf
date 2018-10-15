@@ -1,0 +1,48 @@
+<%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core' %>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.jsp">
+                <img src="img/amrita-news-logo-new.png" alt="Amrita News" class="img-responsive">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.jsp">News</a></li>
+                    <li><a href="archive.jsp">Archive</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                        <a href="#">
+                            Hello <c:out value="${sessionScope.user.getLogin()}">guest</c:out>
+                        </a>
+                    </li>
+                    <c:choose>
+                        <c:when test="${sessionScope.user.getLogin() == null}">
+                            <li>
+                                <a href="login.jsp">Log in</a>
+                            </li>
+                            <li>
+                                <a href="register.jsp">Sign up</a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li>
+                                <a href="logout.jsp">Sign out</a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

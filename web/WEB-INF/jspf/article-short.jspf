@@ -1,0 +1,28 @@
+<div class="short-article item">
+    <div class="thumbnail">
+        <p class="text-right article-img">
+           
+            <img src="../../img/news/img_1626-100640300-primary.idge.jpg" alt=""
+                 class="img-responsive">
+        </p>
+        <div class="caption">
+            <p class="text-right"><span class="badge">03.10.2018</span></p>
+            <h3><a href="article.html">Amrita Vishwa Vidyapeetham Emerges on Top in Swachh Campus Rankings 2018</a></h3>
+            <p><strong>Amrita Vishwa Vidyapeetham, Coimbatore campus, has emerged on top of the 
+                    Swachh Campus Rankings 2018 of the Ministry of Human Resource Development (HRD), 
+                    Government of India, for the second successive year.</strong></p>
+            <hr>
+            <p>Amrita Vishwa Vidyapeetham, Coimbatore campus, has emerged on top of 
+            the Swachh Campus Rankings 2018 of the Ministry of Human Resource 
+            Development (HRD), Government of India, for the second successive 
+            year. Over 6000 higher educational institutions participated in the 
+            rankings which are part of the Swachh Bharat initiative of the 
+            honourable Prime Minister of India. This ranking is based on a 
+            sustainability audit focusing on campus greenery, cleanliness and 
+            maintenance, toilet adequacy in campus, tree planting and community 
+            outreach in promoting Swachh culture.</p>
+            <a href="#" class="btn btn-success">Read more <i
+                    class="glyphicon glyphicon-chevron-right"></i></a>
+        </div>
+    </div>
+</div>

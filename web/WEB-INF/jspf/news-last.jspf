@@ -1,0 +1,24 @@
+
+
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading">Last news</div>
+
+    <!-- List group -->
+    <ul class="list-group">
+        <li class="list-group-item">
+            <div><span class="badge">03.10.2018</span></div>
+            <div><a href="">
+                Amrita Vishwa Vidyapeetham Emerges on Top in Swachh Campus Rankings 2018
+            </a></div>
+        </li>
+        <li class="list-group-item">
+            <div><span class="badge">01.10.2018</span></div>
+            <div><a href="">Amrita BTech Student Represents Karnataka State at India Skills South 2018</a></div>
+        </li>
+        <li class="list-group-item">
+            <div><span class="badge">28.09.2018</span></div>
+            <div><a href="">Amrita Darshanam Organizes Sanskrit Week Celebration</a></div>
+        </li>
+    </ul>
+</div>
