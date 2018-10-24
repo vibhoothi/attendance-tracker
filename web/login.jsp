@@ -26,10 +26,8 @@
     <div class="row" id="main-content">
         <h3 class="text-center"> ${errorMessage}</h3>
         <form class="form-signin" method="post" action="/login">
-            <h2 class="form-signin-heading">Log in here</h2>
-            <label for="inputLogin" class="sr-only">Email address</label>
+            <h2 class="form-signin-heading">Log in</h2>
             <input type="text" id="inputLogin" name="login" class="form-control" placeholder="Login" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
                    required>
             <div class="checkbox">
