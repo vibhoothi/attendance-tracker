@@ -26,17 +26,19 @@
 <%@page import="java.sql.SQLException"%>
 <%
    String email = (String) session.getAttribute("user");
+   out.println(email);
   if (email != null && !email.isEmpty()) {
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma123");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select * from article where category = (select category from user where email='"+email+"')");
                 while (rs.next()) { 
                     String title = rs.getString("title");
                     String subtitle = rs.getString("subtitle");
                     String content = rs.getString("content");
-                    System.out.println(title);
+                    out.println(title);
+                    
                 }
                 stmt.close();
         }
@@ -44,6 +46,7 @@
                 out.println("SQLException caught: " +e.getMessage());
         }
   }
+  out.println("11111111111111111");
           
 
 %>

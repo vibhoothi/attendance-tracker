@@ -45,12 +45,21 @@
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
-//                Statement stmt = conn.createStatement();
-//                stmt.executeUpdate("insert into users values('"+email+"','"+pass+"')");
-//                stmt.close();
-//                session.setAttribute("user", email);
-//                String redirectURL = "/NewsPortal/user.jsp";
-//                response.sendRedirect(redirectURL);
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery("select email from user where email = '" + email +"' and password = '" + pass + "'");
+                if (rs.next()) {
+                    String ret = rs.getString("email");
+                    out.println(ret);
+                    session.setAttribute("user", ret);
+                    stmt.close();
+                    String redirectURL = "/NewsPortal/user.jsp";
+                    response.sendRedirect(redirectURL);
+                }
+                
+                else {
+                    stmt.close();
+                    out.println("Incorrect email or paasword");
+                }               
 
         }
         catch(SQLException e) {
