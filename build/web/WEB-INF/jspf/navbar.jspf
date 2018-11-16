@@ -20,13 +20,8 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li>
-                        <a href="#">
-                            Hello <c:out value="${sessionScope.user.getLogin()}">guest</c:out>
-                        </a>
-                    </li>
                     <c:choose>
-                        <c:when test="${sessionScope.user.getLogin() == null}">
+                        <c:when test= "<%= (String) session.getAttribute("user") == null %>">
                             <li>
                                 <a href="login.jsp">Log in</a>
                             </li>
@@ -36,6 +31,7 @@
                         </c:when>
                         <c:otherwise>
                             <li>
+                                <% session.setAttribute("user", null); %>
                                 <a href="logout.jsp">Sign out</a>
                             </li>
                         </c:otherwise>

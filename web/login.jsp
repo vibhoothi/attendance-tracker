@@ -22,20 +22,44 @@
 <div class="container">
     <div class="row" id="main-content">
         <h3 class="text-center"> ${errorMessage}</h3>
-        <form class="form-signin" method="post" action="/login">
+        <form class="form-signin" method="post">
             <h2 class="form-signin-heading">Log in</h2>
-            <input type="text" id="inputLogin" name="login" class="form-control" placeholder="Login" required autofocus>
+            <input type="email" id="inputLogin" name="email" class="form-control" placeholder="Email" required autofocus>
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
                    required>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
             <button class="btn btn-lg btn-success btn-block" type="submit">Sign in</button>
         </form>
     </div>
 </div>
+        
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.SQLException"%>
+<%
+  String email = request.getParameter("email");
+  String pass = request.getParameter("password");
+  
+  if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty()) {
+        try {
+                Class.forName("org.gjt.mm.mysql.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
+//                Statement stmt = conn.createStatement();
+//                stmt.executeUpdate("insert into users values('"+email+"','"+pass+"')");
+//                stmt.close();
+//                session.setAttribute("user", email);
+//                String redirectURL = "/NewsPortal/user.jsp";
+//                response.sendRedirect(redirectURL);
+
+        }
+        catch(SQLException e) {
+                out.println("SQLException caught: " +e.getMessage());
+        }
+  }
+          
+
+%>
 
 <%@include file="/WEB-INF/jspf/footer.jspf" %>
 

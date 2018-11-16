@@ -29,6 +29,8 @@
             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address">
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
             <input type="password" id="confirmPassword" name="conf_password" class="form-control" placeholder="Confirm password">
+            <input type="text" id="category1" name="category1" class="form-control" placeholder="Preferred news category1">
+            <input type="text" id="category2" name="category2" class="form-control" placeholder="Preferred news category2">
             <br/>
             <button class="btn btn-lg btn-success btn-block" type="submit">Create an account</button>
         </form>
@@ -50,8 +52,10 @@
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate("insert into users values('"+email+"','"+pass+"')");
-                out.println("Registered Successfully");
                 stmt.close();
+                session.setAttribute("user", email);
+                String redirectURL = "/NewsPortal/user.jsp";
+                response.sendRedirect(redirectURL);
 
         }
         catch(SQLException e) {
