@@ -37,7 +37,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
-<%
+<%    
   String email = request.getParameter("email");
   String pass = request.getParameter("password");
   
@@ -51,7 +51,6 @@
                     String ret = rs.getString("email");
                     out.println(ret);
                     session.setAttribute("user", ret);
-                    stmt.close();
                     String redirectURL = "/NewsPortal/user.jsp";
                     response.sendRedirect(redirectURL);
                 }

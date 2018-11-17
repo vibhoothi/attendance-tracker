@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>AmritaNews</title>
+    <h2><center> Successfully logged out </h2>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
@@ -16,10 +17,8 @@
 </head>
 
 <body>
-
+<% session.removeAttribute("user");  %>
 <%@include file="/WEB-INF/jspf/navbar.jspf" %>
-
-
 
 <%@include file="/WEB-INF/jspf/footer.jspf" %>
 

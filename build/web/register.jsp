@@ -29,8 +29,12 @@
             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address">
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
             <input type="password" id="confirmPassword" name="conf_password" class="form-control" placeholder="Confirm password">
-            <input type="text" id="category1" name="category1" class="form-control" placeholder="Preferred news category1">
-            <input type="text" id="category2" name="category2" class="form-control" placeholder="Preferred news category2">
+           <input list="category" name="category" class="form-control" placeholder="Preferred news category">
+            <datalist id="category">
+              <option value="tech">
+              <option value="cultural">
+              <option value="other">
+            </datalist>
             <br/>
             <button class="btn btn-lg btn-success btn-block" type="submit">Create an account</button>
         </form>
@@ -45,13 +49,14 @@
 <%
   String email = request.getParameter("email");
   String pass = request.getParameter("password");
+  String category = request.getParameter("category");
   
   if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty()) {
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("insert into users values('"+email+"','"+pass+"')");
+                stmt.executeUpdate("insert into user(email, password, category) values('"+email+"','"+pass+"','"+category+"')");
                 stmt.close();
                 session.setAttribute("user", email);
                 String redirectURL = "/NewsPortal/user.jsp";

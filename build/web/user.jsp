@@ -27,7 +27,7 @@
 <%@page import="java.sql.SQLException"%>
 <%
    String email = (String) session.getAttribute("user");
-   email = "admin@admin.com";
+   
   if (email != null && !email.isEmpty()) {
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");

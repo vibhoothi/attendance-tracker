@@ -17,6 +17,14 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">News</a></li>
                     <li><a href="archive.jsp">Archive</a></li>
+                    <c:choose>
+                        <c:when test= "<%= (String) session.getAttribute("user") == null %>">
+
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="user.jsp">Personal</a></li>
+                        </c:otherwise>
+                    </c:choose>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 
@@ -31,7 +39,6 @@
                         </c:when>
                         <c:otherwise>
                             <li>
-                                <% session.setAttribute("user", null); %>
                                 <a href="logout.jsp">Sign out</a>
                             </li>
                         </c:otherwise>
