@@ -26,7 +26,7 @@
         </div>
         <div class="col-md-9" id="news">
 
-            <jsp:include page="/WEB-INF/jspf/news-archive.jspf"/>
+            <jsp:include page="/WEB-INF/jspf/news-archive.jsp"/>
 
         </div>
     </div>

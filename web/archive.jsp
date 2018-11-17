@@ -20,7 +20,7 @@
 
 <div class="container">
     <div class="row" id="news-archive">
-        <%@include file="/WEB-INF/jspf/news-archive.jspf" %>
+        <%@include file="/WEB-INF/jspf/news-archive.jsp" %>
     </div>
 </div>
 
