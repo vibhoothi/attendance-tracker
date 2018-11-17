@@ -16,7 +16,8 @@
 </head>
 
 <body>
-
+<div class="col-md-12" id="center">
+    <div class="row masonry-archive" data-columns>
 <%@include file="/WEB-INF/jspf/navbar.jspf" %>
 
 <%@page import="java.sql.ResultSet"%>
@@ -26,7 +27,7 @@
 <%@page import="java.sql.SQLException"%>
 <%
    String email = (String) session.getAttribute("user");
-   out.println(email);
+   email = "admin@admin.com";
   if (email != null && !email.isEmpty()) {
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");
@@ -37,7 +38,25 @@
                     String title = rs.getString("title");
                     String subtitle = rs.getString("subtitle");
                     String content = rs.getString("content");
-                    out.println(title);
+                    String link = rs.getString("link");
+                    %>
+            <div class="item">
+            <div class="thumbnail">
+                <p class="text-right article-img">
+                   
+                    <img src="" alt="" class="img-responsive">
+                </p>
+                <div class="caption">
+                    <h3><a href="<%= link %>"><%= title %></a></h3>
+                    <p><strong><%= subtitle %></strong></p>
+            <hr>
+            <p><%= content %></p>
+                    <a href="<%= link %>" class="btn btn-success">Read more <i
+                            class="glyphicon glyphicon-chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+                    <%
                     
                 }
                 stmt.close();
@@ -45,12 +64,11 @@
                 catch(SQLException e) {
                 out.println("SQLException caught: " +e.getMessage());
         }
-  }
-  out.println("11111111111111111");
-          
+  }          
 
 %>
-
+    </div>
+</div>
 <%@include file="/WEB-INF/jspf/footer.jspf" %>
 
 
