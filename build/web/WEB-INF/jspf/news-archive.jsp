@@ -10,9 +10,6 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
 <%
-   String email = (String) session.getAttribute("user");
-   email = "admin@admin.com";
-  if (email != null && !email.isEmpty()) {
         try {
                 Class.forName("org.gjt.mm.mysql.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
@@ -45,10 +42,9 @@
                 }
                 stmt.close();
         }
-                catch(SQLException e) {
+        catch(SQLException e) {
                 out.println("SQLException caught: " +e.getMessage());
-        }
-  }          
+        }    
 
 %>
     </div>
