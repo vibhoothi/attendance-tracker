@@ -11,8 +11,8 @@
 <%@page import="java.sql.SQLException"%>
 <%
         try {
-                Class.forName("org.gjt.mm.mysql.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "test");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select * from article");
                 while (rs.next()) { 
