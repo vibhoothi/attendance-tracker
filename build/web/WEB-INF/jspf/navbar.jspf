@@ -16,7 +16,7 @@
             <div class="container">
                 <ul class="nav navbar-nav">
                     <li><a href="index.jsp">Student Details</a></li>
-                    <li><a href="archive.jsp">Status</a></li>
+                    <li><a href="archive.jsp">Admin</a></li>
                     <c:choose>
                         <c:when test= '<%= (String) session.getAttribute("user") == null %>'>
 
