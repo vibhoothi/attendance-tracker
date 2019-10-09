@@ -12,14 +12,18 @@
 <%
         try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "test");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("select * from article");
+                ResultSet rs = stmt.executeQuery("select * from user");
                 while (rs.next()) { 
-                    String title = rs.getString("title");
-                    String subtitle = rs.getString("subtitle");
-                    String content = rs.getString("content");
-                    String link = rs.getString("link");
+                    String email= rs.getString("email");
+                    String category= rs.getString("category");
+                    int attendance = rs.getInt("attendance");
+                    int total = rs.getInt("total");
+                    String percentage = "-";
+                    if(total != 0) {
+                        percentage = String.valueOf((attendance * 100)/total) + "%";
+                    }
                     %>
             <div class="item">
             <div class="thumbnail">
@@ -28,12 +32,10 @@
                     <img src="" alt="" class="img-responsive">
                 </p>
                 <div class="caption">
-                    <h3><a href="<%= link %>"><%= title %></a></h3>
-                    <p><strong><%= subtitle %></strong></p>
+                    <p><strong><%= email %></strong></p>
             <hr>
-            <p><%= content %></p>
-                    <a href="<%= link %>" class="btn btn-success">Read more <i
-                            class="glyphicon glyphicon-chevron-right"></i></a>
+            <p><%= category %></p>
+            <p><%= percentage %></p>
                 </div>
             </div>
         </div>

@@ -26,6 +26,7 @@
     <div class="row" id="main-content">
         <form class="form-register" method="post">
             <h2 class="form-register-heading">Sign up</h2>
+            <input type="text" id="inputName" name="name" class="form-control" placeholder="Full Name">
             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address">
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
             <input type="password" id="confirmPassword" name="conf_password" class="form-control" placeholder="Confirm password">
@@ -48,19 +49,20 @@
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
 <%
+  String name= request.getParameter("name");
   String email = request.getParameter("email");
   String pass = request.getParameter("password");
   String category = request.getParameter("category");
   
-  if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty()) {
+  if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty() &&  name != null && !name.isEmpty()) {
         try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("insert into user(email, password, category) values('"+email+"','"+pass+"','"+category+"')");
+                stmt.executeUpdate("insert into user(email, name, password, category, total, attendance) values('"+email+"','"+name+"','"+pass+"','"+category+"', 0, 0)");
                 stmt.close();
                 session.setAttribute("user", email);
-                String redirectURL = "/NewsPortal/user.jsp";
+                String redirectURL = "/index.jsp";
                 response.sendRedirect(redirectURL);
 
         }

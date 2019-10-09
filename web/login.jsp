@@ -44,14 +44,14 @@
   if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty()) {
         try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "test");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select email from user where email = '" + email +"' and password = '" + pass + "'");
                 if (rs.next()) {
                     String ret = rs.getString("email");
                     out.println(ret);
                     session.setAttribute("user", ret);
-                    String redirectURL = "/NewsPortal/user.jsp";
+                    String redirectURL = "/index.jsp";
                     response.sendRedirect(redirectURL);
                 }
                 
