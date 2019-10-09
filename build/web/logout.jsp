@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AmritaNews</title>
+    <title>Attendance Tracker Tracker</title>
     <h2><center> Successfully logged out </h2>
 
     <!-- Bootstrap -->

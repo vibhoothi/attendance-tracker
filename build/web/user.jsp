@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AmritaNews</title>
+    <title>Attendance Tracker</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
@@ -30,8 +30,8 @@
    
   if (email != null && !email.isEmpty()) {
         try {
-                Class.forName("org.gjt.mm.mysql.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select * from article where category = (select category from user where email='"+email+"')");
                 while (rs.next()) { 

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>AmritaNews</title>
+    <title>Attendance Tracker</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
@@ -29,10 +29,11 @@
             <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address">
             <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password">
             <input type="password" id="confirmPassword" name="conf_password" class="form-control" placeholder="Confirm password">
-           <input list="category" name="category" class="form-control" placeholder="Preferred news category">
+           <input list="category" name="category" class="form-control" placeholder="Batch">
             <datalist id="category">
-              <option value="tech">
-              <option value="cultural">
+              <option value="2019">
+              <option value="2018">
+              <option value="2017">
               <option value="other">
             </datalist>
             <br/>
@@ -53,8 +54,8 @@
   
   if (email != null && !email.isEmpty() && pass != null && !pass.isEmpty()) {
         try {
-                Class.forName("org.gjt.mm.mysql.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/news", "root", "amma");
+                Class.forName("com.mysql.jdbc.Driver");
+                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate("insert into user(email, password, category) values('"+email+"','"+pass+"','"+category+"')");
                 stmt.close();

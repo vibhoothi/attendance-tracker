@@ -2,23 +2,27 @@
 
 <div class="panel panel-default">
     <!-- Default panel contents -->
-    <div class="panel-heading">Last news</div>
+    <div class="panel-heading">Latest Absentees</div>
 
     <!-- List group -->
     <ul class="list-group">
         <li class="list-group-item">
-            <div><span class="badge">03.10.2018</span></div>
+            <div><span class="badge">03.10.2019</span></div>
             <div><a href="">
-                Amrita Vishwa Vidyapeetham Emerges on Top in Swachh Campus Rankings 2018
+                AM.EN.U4CSE16363 Abhijt R
             </a></div>
         </li>
         <li class="list-group-item">
-            <div><span class="badge">01.10.2018</span></div>
-            <div><a href="">Amrita BTech Student Represents Karnataka State at India Skills South 2018</a></div>
+            <div><span class="badge">02.10.2019</span></div>
+            <div><a href="">AM.EN.U4CSE18065 Akhil  </a></div>
         </li>
         <li class="list-group-item">
-            <div><span class="badge">28.09.2018</span></div>
-            <div><a href="">Amrita Darshanam Organizes Sanskrit Week Celebration</a></div>
+            <div><span class="badge">01.10.2019</span></div>
+            <div><a href="">AM.EN.U4CSE19001 Sevegan </a></div>
+        </li>
+        <li class="list-group-item">
+            <div><span class="badge">01.10.2019</span></div>
+            <div><a href="">AM.EN.U4CSE2001 Vishwaak C</a></div>
         </li>
     </ul>
 </div>
