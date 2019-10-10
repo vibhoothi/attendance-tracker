@@ -46,10 +46,10 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("select email from user where email = '" + email +"' and password = '" + pass + "'");
+                ResultSet rs = stmt.executeQuery("select name from user where email = '" + email +"' and password = '" + pass + "'");
+
                 if (rs.next()) {
-                    String ret = rs.getString("email");
-                    out.println(ret);
+                    String ret = rs.getString("name");
                     session.setAttribute("user", ret);
                     String redirectURL = "/index.jsp";
                     response.sendRedirect(redirectURL);

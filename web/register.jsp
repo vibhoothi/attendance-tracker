@@ -61,7 +61,7 @@
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate("insert into user(email, name, password, category, total, attendance) values('"+email+"','"+name+"','"+pass+"','"+category+"', 0, 0)");
                 stmt.close();
-                session.setAttribute("user", email);
+                session.setAttribute("user", name);
                 String redirectURL = "/index.jsp";
                 response.sendRedirect(redirectURL);
 
