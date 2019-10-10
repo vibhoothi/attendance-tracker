@@ -32,17 +32,22 @@
 <%@ page  import ="org.jfree.data.general.*"%>
 <%
    String email = (String) session.getAttribute("user");
-   
+   String date = (String) session.getAttribute("attendance");
+  
   if (email != null && !email.isEmpty()) {
         try {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
+                Statement stmt2 = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select * from user where name ='"+email+"'");
+                //  ResultSet rs2 = stmt2.executeQuery("select * from user, attendance where user.name=attendance.name ='"+date+"'");
+                ResultSet rs2 = stmt2.executeQuery("select * from attendance where attendance.name ='"+email+"' and ispresent=1");
                 int attendance = 0;
                 int total = 0;
-                while (rs.next()) { 
+                while (rs.next() && rs2.next() ) { 
                     attendance = rs.getInt("attendance");
+                    String dummy = rs2.getString("date");
                     total = rs.getInt("total");
                     final DefaultPieDataset data = new DefaultPieDataset();
                     data.setValue("Present", attendance);
@@ -58,6 +63,7 @@
                     } catch (Exception e) {
                          System.out.println(e);
                     }
+               
                     %>
             <div class="item">
             <div class="thumbnail">
@@ -68,15 +74,17 @@
                     <h3><%= email %></h3>           
                     <img SRC=<%= file %> WIDTH="600" HEIGHT="400" 
    BORDER="0" USEMAP="#chart">
-                    
+                    <p>Last day you attended class: <strong><%= dummy %></strong></p>
+      
                 </div>
             </div>
-
-        </div>
+   
+            </div>
                     <%
                     
                 }
                 stmt.close();
+                stmt2.close();
         }
                 catch(SQLException e) {
                 out.println("SQLException caught: " +e.getMessage());

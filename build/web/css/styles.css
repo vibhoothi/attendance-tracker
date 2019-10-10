@@ -19,7 +19,7 @@ body {
 }
 
 .navbar {
-    background: #ff9400;
+    background: #5abf2ba2;
     min-height: 80px;
 }
 
@@ -70,8 +70,8 @@ body {
 
 .panel-default > .panel-heading {
     color: white;
-    background-color: #ff9400;
-    border-color: #ff9400;
+    background-color: #5abf2ba2;
+    border-color: #5abf2ba2;
 }
 
 .footer {
@@ -79,7 +79,7 @@ body {
     bottom: 0;
     width: 100%;
     height: 30px;
-    background: #ff9400;
+    background: #5abf2ba2;
 }
 
 .footer a {
@@ -115,15 +115,15 @@ body {
 }
 
 .btn-success {
-    background-color: #ff9400;
-    border-color: #ff9400;
+    background-color: #5abf2ba2;
+    border-color: #5abf2ba2;
 }
 
 .btn-success:focus,
 .btn-success.focus {
 
-    background-color: #ff9400;
-    border-color: #ff9400;
+    background-color: #5abf2ba2;
+    border-color: #5abf2ba2;
 }
 
 .btn-success:hover {
