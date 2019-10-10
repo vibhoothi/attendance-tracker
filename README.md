@@ -21,4 +21,4 @@ For running the software in the optimal way, we recommend to use 11.1 Version of
 # Entity Relation Diagram 
 Please refer the below ER Diagram to get idea about the project 
 ![ER](https://i.imgur.com/lxkcKKi.png)
-!(https://i.imgur.com/lxkcKKi.png) 
+
