@@ -1,4 +1,12 @@
 # Attendance Tracker
+Attendance management is the act of managing attendance or presence in a work setting to minimize loss due to employee downtime.
+
+Attendance control has traditionally been approached using time clocks, timesheets, and time tracking software, 
+but attendance management goes beyond this to provide a working environment which maximizes and motivates employee attendance.
+Recently it has become possible to collect attendance data automatically through using real-time location systems, 
+which also allow for cross-linking between attendance data and performance.
+
+Attendance management takes place in all educational campuses be they university, college or school.
 
 Netcentric Programming Project. 
 
