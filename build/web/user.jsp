@@ -17,7 +17,7 @@
 
 <body>
 <div class="col-md-12" id="center">
-    <div class="row masonry-archive" data-columns>
+    
 <%@include file="/WEB-INF/jspf/navbar.jspf" %>
 
 <%@page import="java.sql.ResultSet"%>
@@ -25,6 +25,11 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.SQLException"%>
+<%@ page  import="java.awt.*" %>
+<%@ page  import="java.io.*" %>
+<%@ page  import="org.jfree.chart.*" %>
+<%@ page  import="org.jfree.chart.entity.*" %>
+<%@ page  import ="org.jfree.data.general.*"%>
 <%
    String email = (String) session.getAttribute("user");
    
@@ -33,28 +38,40 @@
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/testdb", "root", "test");
                 Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("select * from article where category = (select category from user where email='"+email+"')");
+                ResultSet rs = stmt.executeQuery("select * from user where name ='"+email+"'");
+                int attendance = 0;
+                int total = 0;
                 while (rs.next()) { 
-                    String title = rs.getString("title");
-                    String subtitle = rs.getString("subtitle");
-                    String content = rs.getString("content");
-                    String link = rs.getString("link");
+                    attendance = rs.getInt("attendance");
+                    total = rs.getInt("total");
+                    final DefaultPieDataset data = new DefaultPieDataset();
+                    data.setValue("Present", attendance);
+                    data.setValue("Absent", total - attendance);
+                    JFreeChart chart = ChartFactory.createPieChart("Pie Chart ", data, true, true, false);
+                    String file = "/img/pie/pie-" + email + ".png";
+                    String filename = "pie-" + email + ".png"; 
+                    try {
+                        final ChartRenderingInfo info = new ChartRenderingInfo(new StandardEntityCollection());
+                         //out.println(getServletContext().getRealPath("."));
+                         final File file1 = new File(getServletContext().getRealPath(".") + file);
+                         ChartUtils.saveChartAsPNG(file1, chart, 600, 400, info);
+                    } catch (Exception e) {
+                         System.out.println(e);
+                    }
                     %>
             <div class="item">
             <div class="thumbnail">
-                <p class="text-right article-img">
-                   
+                <p class="text-center article-img">
                     <img src="" alt="" class="img-responsive">
                 </p>
                 <div class="caption">
-                    <h3><a href="<%= link %>"><%= title %></a></h3>
-                    <p><strong><%= subtitle %></strong></p>
-            <hr>
-            <p><%= content %></p>
-                    <a href="<%= link %>" class="btn btn-success">Read more <i
-                            class="glyphicon glyphicon-chevron-right"></i></a>
+                    <h3><%= email %></h3>           
+                    <img SRC=<%= file %> WIDTH="600" HEIGHT="400" 
+   BORDER="0" USEMAP="#chart">
+                    
                 </div>
             </div>
+
         </div>
                     <%
                     
@@ -67,7 +84,7 @@
   }          
 
 %>
-    </div>
+    
 </div>
 <%@include file="/WEB-INF/jspf/footer.jspf" %>
 
